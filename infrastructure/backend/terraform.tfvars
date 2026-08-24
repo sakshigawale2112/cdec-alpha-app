@@ -1,6 +1,6 @@
 # Copy to terraform.tfvars. Do not commit terraform.tfvars.
 
-aws_region   = "eu-west-1"
+aws_region   = "eu-north-1"
 environment  = "dev"
 project_name = "cdec-alpha"
 cluster_name = "cdec-eks-dev"
@@ -9,7 +9,7 @@ cluster_name = "cdec-eks-dev"
 vpc_cidr             = "10.0.0.0/16"
 public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
 private_subnet_cidrs = ["10.0.10.0/24", "10.0.20.0/24"]
-availability_zones   = ["eu-west-1a", "eu-west-1b"]
+availability_zones   = ["eu-north-1a", "eu-north-1b"]
 
 single_nat_gateway = true
 
@@ -25,7 +25,7 @@ cluster_endpoint_private_access      = true
 cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"]
 
 cluster_admin_iam_role_names    = []
-cluster_admin_principal_arns    = []
+cluster_admin_principal_arns    = ["arn:aws:iam::503891328279:user/sakshi"]
 include_caller_as_cluster_admin = true
 
 additional_tags = {
@@ -34,6 +34,6 @@ additional_tags = {
 
 # ALB Ingress — AWS Load Balancer Controller + API ingress
 enable_alb_ingress  = true
-ingress_host        = "api.infra-software-architect.online"
-acm_certificate_arn = "arn:aws:acm:eu-west-1:365642143872:certificate/b95066d1-8b56-4a16-8e1b-a0d2d775fc24"
+ingress_host        = "api.sakshi.store"
+acm_certificate_arn = "arn:aws:acm:eu-north-1:503891328279:certificate/477d5613-d857-4b4b-a451-812a578f3fc3"
 alb_name            = "cdec-alpha-alb"
