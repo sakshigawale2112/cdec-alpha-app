@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: auth-service
-          image: 503891328279.dkr.ecr.us-east-1.amazonaws.com/cdec-alpha-auth:latest
+          image: 503891328279.dkr.ecr.eu-north-1.amazonaws.com/cdec-alpha-auth
           imagePullPolicy: Always
           env:
             - name: DD_LOGS_INJECTION
